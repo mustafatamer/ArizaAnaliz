@@ -1,0 +1,69 @@
+﻿<Window
+    x:Class="ArizaAnaliz.Views.ImportExcelView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewmodels="clr-namespace:ArizaAnaliz.ViewModels"
+    xmlns:views="clr-namespace:ArizaAnaliz.Views"
+    xmlns:behaviors="clr-namespace:ArizaAnaliz"
+    mc:Ignorable="d"
+    d:DesignHeight="450"
+    d:DesignWidth="800">
+
+    <Window.DataContext>
+        <viewmodels:ImportExcelViewModel />
+    </Window.DataContext>
+    <TabControl>
+        <TabItem Header="Dosya Ayarları">
+            <Grid Margin="10">
+                <StackPanel x:Name="xpath"  Orientation="Vertical">
+                    <StackPanel x:Name="ArizaPath"  Orientation="Horizontal">
+                        <Label Content="Arıza Excel Dosya Yolu" />
+                        <TextBox Background="Beige" Margin="5,2,2,2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Text="{Binding ArizaExcelPath,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                        <Button  x:Name="btnArizaPathChange"  Margin="5,2,2,2"   Content="..."  HorizontalAlignment="Center"  Command="{Binding ChangeArizaExcelPathCommand}" />
+                    </StackPanel>
+                    <StackPanel x:Name="ModemKoordinatPath"  Orientation="Horizontal">
+                        <Label Content="Modem Koordinat Excel Dosya Yolu" />
+                        <TextBox Background="Beige"  Margin="5,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Stretch"  Text="{Binding ModemKoordinatExcelPath,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                        <Button  x:Name="btnModemKoortinatPathChange" Margin="5,2,2,2" HorizontalAlignment="Right"    Content="..."   Command="{Binding ChangeModemKoordinatExcelPathCommand}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button  x:Name="btnInport" Height="30" Width="100" Margin="5"  Content="Yükle" VerticalAlignment="Center" HorizontalAlignment="Center"  Command="{Binding ImportCommand}" />
+                        <Button  x:Name="btnKaydet" Height="30" Width="100" Margin="5"  Content="Kaydet" VerticalAlignment="Center" HorizontalAlignment="Center"  Command="{Binding KaydetCommand}" />
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Yüklenen Veriler">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Button  x:Name="btnGoster" Height="30" Width="100" Margin="5"  Content="Çizimde Göster" VerticalAlignment="Center" HorizontalAlignment="Left"  Command="{Binding ShowingDrawCommand}" />
+
+                <DataGrid Grid.Row="1"  CanUserAddRows="False"  behaviors:DataGridSelectedCellsBehavior.SelectedCells="{Binding Path=SelectedGridCellCollection, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  
+                       SelectedItem="{Binding SelectedItems,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                       SelectionMode="Extended" 
+                       ItemsSource="{Binding GetArizaAnalizPivots,Mode=OneWay,UpdateSourceTrigger=PropertyChanged}"
+                       AutoGenerateColumns="False" 
+                       >
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ModemNumarasi" Binding="{Binding ModemNumarasi,Mode=OneWay,UpdateSourceTrigger=PropertyChanged}" FontFamily="Arial" FontStyle="Italic" />
+                        <DataGridTextColumn Header="Ozet Lokasyon" Binding="{Binding OzetLokasyon }" FontFamily="Arial" FontStyle="Italic" />
+                        <DataGridTextColumn Header="Ariza Sayısı" Binding="{Binding ArizaSayisi  }" FontFamily="Arial" FontStyle="Italic" />
+                        <DataGridTextColumn Header="Ariza Süresi" Binding="{Binding ArizaSuresi  }" FontFamily="Arial" FontStyle="Italic" />
+                        <DataGridTextColumn Header="Başlangıç Tarihi" Binding="{Binding BasTarihi       }" FontFamily="Arial" FontStyle="Italic" />
+                        <DataGridTextColumn Header="Bitiş Tarihi" Binding="{Binding BitTarihi       }" FontFamily="Arial" FontStyle="Italic" />
+                        <DataGridTextColumn Header="X Koord" Binding="{Binding xcoord       }" FontFamily="Arial" FontStyle="Italic" />
+                        <DataGridTextColumn Header="Y Koord" Binding="{Binding ycoord       }" FontFamily="Arial" FontStyle="Italic" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+
+        </TabItem>
+    </TabControl>
+
+
+</Window>
