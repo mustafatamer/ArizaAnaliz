@@ -12,7 +12,7 @@ namespace ArizaAnaliz.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.7.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.8.1.0")]
     public sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -25,7 +25,8 @@ namespace ArizaAnaliz.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("CAD DATA\\okan_cesur_gunluk_aril_acma_raporu__(okan.cesur)_fgU7W.xlsx")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Compiled\\ArızaAnaliz\\bin\\Debug\\CAD DATA\\okan_cesur_gunluk_aril_acma_raporu__(o" +
+            "kan.cesur)_fgU7W.xlsx")]
         public string ArizaExcelPath {
             get {
                 return ((string)(this["ArizaExcelPath"]));
@@ -37,7 +38,7 @@ namespace ArizaAnaliz.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("CAD DATA\\koordinat ve modem.xlsx")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Compiled\\ArızaAnaliz\\bin\\Debug\\CAD DATA\\koordinat ve modem.xlsx")]
         public string KoordinatAndModemExcelPath {
             get {
                 return ((string)(this["KoordinatAndModemExcelPath"]));

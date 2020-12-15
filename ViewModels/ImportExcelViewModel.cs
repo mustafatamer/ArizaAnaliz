@@ -93,7 +93,13 @@ namespace ArizaAnaliz.ViewModels
         public void Import()
         {
             var AnalizList = GetImportArizaExcelModelList
-                .GroupBy(x => new { x.ModemNumarasi, x.OzetLokasyon, BasTarihi = x.BaslangisTarihi.Hour.ToString("00") + ":" + x.BaslangisTarihi.Minute.ToString("00"), BitTarihi = x.BitisTarihi.Date.ToShortDateString() })
+                .GroupBy(x => new
+                {
+                    x.ModemNumarasi,
+                    x.OzetLokasyon,
+                    BasTarihi = x.BaslangisTarihi.Hour.ToString("00") + ":" + x.BaslangisTarihi.Minute.ToString("00"), 
+                    BitTarihi = x.BitisTarihi.Date.ToShortDateString() 
+                })
                 .Select(x =>
                 {
                     ArizaAnalizPivot newArizaAnalizPivot = new ArizaAnalizPivot();
@@ -127,6 +133,9 @@ namespace ArizaAnaliz.ViewModels
 
             foreach (var item in AnalizList)
             {
+
+                //BasTarihi = 05:00 => (5 * 60 + 0) / 6  = 30    
+                //ARALARINDA 6 DAKİKADAN AZ OLAN ARIZALAR AYNI RENKTE AYARLANIR.
                 int colorindex = (int)((int.Parse(item.BasTarihi.Substring(0, 2)) * 60 + (int)(int.Parse(item.BasTarihi.Substring(3, 2)))) / 6);
                 MText mText;
                 Circle circle;

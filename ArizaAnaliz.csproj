@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\..\..\Compiled\ArızaAnaliz\bin\Debug\</OutputPath>
+    <OutputPath>C:\Compiled\ArızaAnaliz\bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -89,57 +89,35 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="AcCoreMgd">
-      <HintPath>C:\Autodesk\ObjectARX_for_AutoCAD_2020_Win_64_bit\inc\AcCoreMgd.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>C:\Autodesk\ObjectARX 2015\inc\AcCoreMgd.dll</HintPath>
     </Reference>
     <Reference Include="AcCui">
-      <HintPath>C:\Autodesk\ObjectARX_for_AutoCAD_2020_Win_64_bit\inc\AcCui.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>C:\Autodesk\ObjectARX 2015\inc\AcCui.dll</HintPath>
     </Reference>
     <Reference Include="AcDbMgd">
-      <HintPath>C:\Autodesk\ObjectARX_for_AutoCAD_2020_Win_64_bit\inc\AcDbMgd.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>C:\Autodesk\ObjectARX 2015\inc\AcDbMgd.dll</HintPath>
     </Reference>
     <Reference Include="acdbmgdbrep, Version=20.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Autodesk\ObjectARX_for_AutoCAD_2020_Win_64_bit\inc\acdbmgdbrep.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>C:\Autodesk\ObjectARX 2015\inc\acdbmgdbrep.dll</HintPath>
     </Reference>
     <Reference Include="AcDx">
-      <HintPath>C:\Autodesk\ObjectARX_for_AutoCAD_2020_Win_64_bit\inc\AcDx.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>C:\Autodesk\ObjectARX 2015\inc\AcDx.dll</HintPath>
     </Reference>
     <Reference Include="AcMgd">
-      <HintPath>C:\Autodesk\ObjectARX_for_AutoCAD_2020_Win_64_bit\inc\AcMgd.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>C:\Autodesk\ObjectARX 2015\inc\AcMgd.dll</HintPath>
     </Reference>
     <Reference Include="AcMr">
-      <HintPath>C:\Autodesk\ObjectARX_for_AutoCAD_2020_Win_64_bit\inc\AcMr.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="AcSeamless">
-      <HintPath>C:\Autodesk\ObjectARX_for_AutoCAD_2020_Win_64_bit\inc\AcSeamless.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>C:\Autodesk\ObjectARX 2015\inc\AcMr.dll</HintPath>
     </Reference>
     <Reference Include="AcTcMgd">
-      <HintPath>C:\Autodesk\ObjectARX_for_AutoCAD_2020_Win_64_bit\inc\AcTcMgd.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>C:\Autodesk\ObjectARX 2015\inc\AcTcMgd.dll</HintPath>
     </Reference>
     <Reference Include="AcWindows">
-      <HintPath>C:\Autodesk\ObjectARX_for_AutoCAD_2020_Win_64_bit\inc\AcWindows.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="AdUIMgd">
-      <HintPath>C:\Autodesk\ObjectARX_for_AutoCAD_2020_Win_64_bit\inc\AdUIMgd.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="AdUiPalettes">
-      <HintPath>C:\Autodesk\ObjectARX_for_AutoCAD_2020_Win_64_bit\inc\AdUiPalettes.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>C:\Autodesk\ObjectARX 2015\inc\AcWindows.dll</HintPath>
     </Reference>
     <Reference Include="AdWindows">
-      <HintPath>C:\Autodesk\ObjectARX_for_AutoCAD_2020_Win_64_bit\inc\AdWindows.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>C:\Autodesk\ObjectARX 2015\inc\AdWindows.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -156,6 +134,11 @@
     <PackageReference Include="LinqToExcel">
       <Version>1.11.0</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CAD DATA\ArizaAnaliz Altlık.dwg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
